@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+        }
+        .center-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="center-image">
+        <img src="https://imgs.search.brave.com/yj9SVoq5JRsdibeMOPEPQAIQUGRH_s47gx35JSvjP6c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA5/NzAxMDIwMi9mci9w/aG90by9wb3J0cmFp/dC1kdW4tY2hhdC1m/dW5ueS1sb29raW5n/LW91dC1vZi10aGUt/Ym94LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1yRnpiUjhw/U3pkaDNrY3l6Vk82/cnpWeDZ0anhURFhM/MGdWMWcyM0NET3Rn/PQ">
+
+
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Mot de passe" required minlength="6">
+            <button type="submit">Se connecter</button>
+            <div class="error-message" id="errorMessage">Email ou mot de passe incorrect.</div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            if (email === "louanrobertroussel2008@gmail.com" && password === "123456789") {
+                alert('Connexion réussie !');
+                window.location.href = 'file:///C:/Users/lauwo/OneDrive/Bureau/Site%20wed%20accueil.html';
+
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
