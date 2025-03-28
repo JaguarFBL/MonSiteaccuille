@@ -3,7 +3,43 @@
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+-->    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #horloge {
+            font-size: 2em;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="horloge"></div>
+
+    <script>
+        function afficherHeure() {
+            const maintenant = new Date();
+            const heures = String(maintenant.getHours()).padStart(2, '0');
+            const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+            const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+
+            const horloge = document.getElementById('horloge');
+            horloge.textContent = `${heures}:${minutes}:${secondes}`;
+        }
+
+        // Met à jour l'heure toutes les secondes
+        setInterval(afficherHeure, 1000);
+        // Affiche l'heure immédiatement au chargement de la page
+        afficherHeure();
+    </script>
+</body>
 <html>
 	<head>
 		<title>Site Perso</title>
