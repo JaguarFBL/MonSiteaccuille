@@ -3,7 +3,50 @@
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->    
+-->   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #horloge {
+            font-size: 2em;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ccc; /* Fond gris */
+        }
+    </style>
+</head>
+<body>
+    <div id="horloge"></div>
+
+    <script>
+        function afficherHeure() {
+            const maintenant = new Date();
+            const heures = String(maintenant.getHours()).padStart(2, '0');
+            const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+            const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+
+            const horloge = document.getElementById('horloge');
+            horloge.textContent = `${heures}:${minutes}:${secondes}`;
+        }
+
+        // Met à jour l'heure toutes les secondes
+        setInterval(afficherHeure, 1000);
+        // Affiche l'heure immédiatement au chargement de la page
+        afficherHeure();
+    </script>
+</body>
 <head>
         <title>Site Perso</title>
         <meta charset="utf-8" />
@@ -18,13 +61,13 @@
 			<div id="main">
 
 				<!-- Header -->
-					<header id="header">
-						<h1>Hello JaguarFBL</h1>
-						<p>Dossier &nbsp;&bull;&nbsp; Vidéo &nbsp;&bull;&nbsp; Wikipédia</p>
-						<nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Dossier</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+<header id="header">
+	<h1>Hello JaguarFBL</h1>
+       <p>Dossier &nbsp;&bull;&nbsp; Vidéo &nbsp;&bull;&nbsp; Wikipédia</p>
+	<nav>
+		<ul>
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Dossier</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 			<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 			<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
@@ -34,14 +77,7 @@
 
 
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
-
-			</div>
-		</div>
-		<script>
+                <script>
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
